@@ -1,0 +1,1759 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yumna Shams | Graphic Designer & Web Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#10b981',
+              dark: '#059669'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+    }
+    
+    .montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    html.dark body {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    
+    html.light body {
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    
+    /* Gradient Text */
+    .gradient-text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    
+    html.dark .gradient-text {
+      background-image: linear-gradient(to right, #10b981, #34d399);
+    }
+    
+    html.light .gradient-text {
+      background-image: linear-gradient(to right, #059669, #10b981);
+    }
+    
+    /* Gradient Background */
+    html.dark .gradient-bg {
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+    
+    html.light .gradient-bg {
+      background: linear-gradient(135deg, #10b981, #34d399);
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+      backdrop-filter: blur(10px);
+      transition: all 0.5s ease;
+    }
+    
+    html.dark .navbar {
+      background-color: rgba(15, 23, 42, 0.8);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+    }
+    
+    html.light .navbar {
+      background-color: rgba(248, 250, 252, 0.8);
+      border-bottom: 1px solid rgba(5, 150, 105, 0.1);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    html.dark .nav-link::after {
+      background: linear-gradient(to right, #10b981, #34d399);
+    }
+    
+    html.light .nav-link::after {
+      background: linear-gradient(to right, #059669, #10b981);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* Card Styles */
+    .card {
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+    
+    html.dark .card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(16, 185, 129, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    html.light .card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(5, 150, 105, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    html.dark .card:hover {
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    
+    html.light .card:hover {
+      box-shadow: 0 10px 25px rgba(5, 150, 105, 0.15);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+    
+    /* Button Styles */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.6s ease;
+      z-index: -1;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+    
+    html.dark .btn-primary {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: white;
+    }
+    
+    html.light .btn-primary {
+      background: linear-gradient(135deg, #10b981, #34d399);
+      color: white;
+    }
+    
+    html.dark .btn-outline {
+      border: 1px solid #10b981;
+      color: #f8fafc;
+    }
+    
+    html.light .btn-outline {
+      border: 1px solid #059669;
+      color: #0f172a;
+    }
+    
+    html.dark .btn-outline:hover {
+      background: rgba(16, 185, 129, 0.1);
+    }
+    
+    html.light .btn-outline:hover {
+      background: rgba(5, 150, 105, 0.1);
+    }
+    
+    /* Skill Pill Styles */
+    html.dark .skill-pill {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    
+    html.light .skill-pill {
+      background: rgba(5, 150, 105, 0.1);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+    
+    .skill-pill {
+      transition: all 0.3s ease;
+    }
+    
+    .skill-pill:hover {
+      transform: translateY(-2px);
+    }
+    
+    html.dark .skill-pill:hover {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    
+    html.light .skill-pill:hover {
+      background: rgba(5, 150, 105, 0.2);
+      border: 1px solid rgba(5, 150, 105, 0.3);
+    }
+    
+    /* Icon Circle Styles */
+    .icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    html.dark .icon-circle {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+    
+    html.light .icon-circle {
+      background: rgba(5, 150, 105, 0.1);
+      color: #059669;
+    }
+    
+    .icon-circle:hover {
+      transform: scale(1.1);
+    }
+    
+    html.dark .icon-circle:hover {
+      background: rgba(16, 185, 129, 0.2);
+    }
+    
+    html.light .icon-circle:hover {
+      background: rgba(5, 150, 105, 0.2);
+    }
+    
+    /* Timeline Styles */
+    .timeline-item {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+    }
+    
+    html.dark .timeline-item::before {
+      background: linear-gradient(to bottom, #10b981, rgba(16, 185, 129, 0.2));
+    }
+    
+    html.light .timeline-item::before {
+      background: linear-gradient(to bottom, #059669, rgba(5, 150, 105, 0.2));
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+    
+    html.dark .timeline-item::after {
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+    
+    html.light .timeline-item::after {
+      background: #059669;
+      box-shadow: 0 0 10px #059669;
+    }
+    
+    /* Progress Bar Styles */
+    .progress-bar {
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    html.dark .progress-bar {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    html.light .progress-bar {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    html.dark .progress-fill {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+    
+    html.light .progress-fill {
+      background: linear-gradient(90deg, #059669, #10b981);
+    }
+    
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .slide-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    /* Staggered Animation Delay */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+    .delay-500 { transition-delay: 0.5s; }
+    
+    /* Floating Animation */
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    /* Pulse Animation */
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Rotate Animation */
+    .rotate-slow {
+      animation: rotate 15s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Typing Cursor Animation */
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      margin-left: 2px;
+      background-color: currentColor;
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    /* Theme Toggle Styles */
+    .theme-toggle {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    html.dark .theme-toggle {
+      background: #1e293b;
+      border: 1px solid #334155;
+    }
+    
+    html.light .theme-toggle {
+      background: #e2e8f0;
+      border: 1px solid #cbd5e0;
+    }
+    
+    .toggle-circle {
+      position: absolute;
+      top: 2px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    html.dark .toggle-circle {
+      left: 2px;
+      background: #10b981;
+    }
+    
+    html.light .toggle-circle {
+      left: 32px;
+      background: #059669;
+    }
+    
+    .toggle-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+    }
+    
+    html.dark .moon-icon {
+      right: 8px;
+      color: #f8fafc;
+    }
+    
+    html.dark .sun-icon {
+      left: 8px;
+      color: #f8fafc;
+      opacity: 0.5;
+    }
+    
+    html.light .moon-icon {
+      right: 8px;
+      color: #0f172a;
+      opacity: 0.5;
+    }
+    
+    html.light .sun-icon {
+      left: 8px;
+      color: #0f172a;
+    }
+    
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    /* Background Shapes */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: -1;
+      opacity: 0.5;
+    }
+    
+    html.dark .bg-shape {
+      background: rgba(16, 185, 129, 0.15);
+    }
+    
+    html.light .bg-shape {
+      background: rgba(5, 150, 105, 0.1);
+    }
+    
+    /* Project Card Hover Effect */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    /* Hexagon Grid */
+    .hexagon-container {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .hexagon-wrapper {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      padding-bottom: 115%;
+    }
+    
+    .hexagon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15%;
+    }
+    
+    .hexagon:hover {
+      transform: translateY(-10px);
+    }
+    
+    html.dark .hexagon.color-1 {
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    }
+    
+    html.dark .hexagon.color-2 {
+      background: linear-gradient(135deg, #0f766e, #14b8a6);
+    }
+    
+    html.dark .hexagon.color-3 {
+      background: linear-gradient(135deg, #4338ca, #6366f1);
+    }
+    
+    html.dark .hexagon.color-4 {
+      background: linear-gradient(135deg, #7e22ce, #a855f7);
+    }
+    
+    html.dark .hexagon.color-5 {
+      background: linear-gradient(135deg, #be185d, #ec4899);
+    }
+    
+    html.dark .hexagon.color-6 {
+      background: linear-gradient(135deg, #b45309, #f59e0b);
+    }
+    
+    html.light .hexagon.color-1 {
+      background: linear-gradient(135deg, #3b82f6, #93c5fd);
+    }
+    
+    html.light .hexagon.color-2 {
+      background: linear-gradient(135deg, #14b8a6, #5eead4);
+    }
+    
+    html.light .hexagon.color-3 {
+      background: linear-gradient(135deg, #6366f1, #a5b4fc);
+    }
+    
+    html.light .hexagon.color-4 {
+      background: linear-gradient(135deg, #a855f7, #d8b4fe);
+    }
+    
+    html.light .hexagon.color-5 {
+      background: linear-gradient(135deg, #ec4899, #fbcfe8);
+    }
+    
+    html.light .hexagon.color-6 {
+      background: linear-gradient(135deg, #f59e0b, #fcd34d);
+    }
+    
+    .hexagon-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .hexagon-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      line-height: 1.2;
+    }
+    
+    @media (max-width: 640px) {
+      .hexagon-icon {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+      
+      .hexagon-text {
+        font-size: 0.8rem;
+      }
+      
+      .hexagon {
+        padding: 10%;
+      }
+    }
+    
+    /* Contact Form Styles */
+    .input-field {
+      transition: all 0.3s ease;
+    }
+    
+    html.dark .input-field {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #f8fafc;
+    }
+    
+    html.light .input-field {
+      background: rgba(248, 250, 252, 0.8);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+      color: #0f172a;
+    }
+    
+    html.dark .input-field:focus {
+      border-color: #10b981;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+    
+    html.light .input-field:focus {
+      border-color: #059669;
+      box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+    }
+    
+    /* Social Icons */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    
+    html.dark .social-icon {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+    
+    html.light .social-icon {
+      background: rgba(5, 150, 105, 0.1);
+      color: #059669;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px);
+    }
+    
+    html.dark .social-icon:hover {
+      background: rgba(16, 185, 129, 0.2);
+    }
+    
+    html.light .social-icon:hover {
+      background: rgba(5, 150, 105, 0.2);
+    }
+    
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+    
+    html.dark .scroll-progress {
+      background: linear-gradient(to right, #10b981, #34d399);
+    }
+    
+    html.light .scroll-progress {
+      background: linear-gradient(to right, #059669, #10b981);
+    }
+    
+    /* Scroll To Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    html.dark .scroll-top {
+      background: #10b981;
+      color: white;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    }
+    
+    html.light .scroll-top {
+      background: #059669;
+      color: white;
+      box-shadow: 0 0 15px rgba(5, 150, 105, 0.5);
+    }
+    
+    .scroll-top:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Section Styles */
+    .section {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 50px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      border-radius: 2px;
+    }
+    
+    html.dark .section-title::after {
+      background: linear-gradient(to right, #10b981, #34d399);
+    }
+    
+    html.light .section-title::after {
+      background: linear-gradient(to right, #059669, #10b981);
+    }
+    
+    /* Contact Icon Styles */
+    .contact-icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-icon {
+      font-size: 20px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .section {
+        padding: 70px 0;
+      }
+      
+      .section-title {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  
+  <!-- Background Shapes -->
+  <div class="bg-shape" style="width: 500px; height: 500px; top: 10%; left: 5%;"></div>
+  <div class="bg-shape" style="width: 400px; height: 400px; top: 60%; right: 5%;"></div>
+  <div class="bg-shape" style="width: 300px; height: 300px; top: 120%; left: 15%;"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar fixed top-0 left-0 w-full z-50 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold gradient-text">YS</a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        
+        <!-- Theme Toggle -->
+        <div class="theme-toggle ml-4" id="themeToggle">
+          <div class="toggle-circle"></div>
+          <i class="fas fa-moon toggle-icon moon-icon"></i>
+          <i class="fas fa-sun toggle-icon sun-icon"></i>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <div class="theme-toggle mr-4" id="mobileThemeToggle">
+          <div class="toggle-circle"></div>
+          <i class="fas fa-moon toggle-icon moon-icon"></i>
+          <i class="fas fa-sun toggle-icon sun-icon"></i>
+        </div>
+        
+        <button id="menuToggle" class="focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="mobile-menu fixed top-[73px] left-0 h-screen w-full md:hidden">
+      <div class="h-full flex flex-col p-6 space-y-6">
+        <a href="#home" class="nav-link text-xl">Home</a>
+        <a href="#about" class="nav-link text-xl">About</a>
+        <a href="#skills" class="nav-link text-xl">Skills</a>
+        <a href="#education" class="nav-link text-xl">Education</a>
+        <a href="#projects" class="nav-link text-xl">Projects</a>
+        <a href="#contact" class="nav-link text-xl">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="section min-h-screen flex items-center">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col-reverse lg:flex-row items-center">
+        <div class="lg:w-1/2 mt-12 lg:mt-0">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 fade-in">
+            Hi, I'm <span class="gradient-text">Yumna Shams</span>
+          </h1>
+          
+          <h2 class="text-xl md:text-2xl mb-6 fade-in delay-100">
+            <span id="typedText"></span><span class="cursor"></span>
+          </h2>
+          
+          <p class="text-lg opacity-80 max-w-lg mb-8 fade-in delay-200">
+            Finding a challenging position in an establishment or organization where I can enhance my knowledge and skills, to bring about a positive difference and contribute to the growth of the organization.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 fade-in delay-300">
+            <a href="#contact" class="btn btn-primary px-8 py-3 rounded-full font-medium">
+              Get In Touch
+            </a>
+            <a href="#" class="btn btn-outline px-8 py-3 rounded-full font-medium">
+              Download CV
+            </a>
+          </div>
+          
+          <div class="mt-10 flex space-x-4 fade-in delay-400">
+            <a href="#" class="social-icon w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a href="#" class="social-icon w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="#" class="social-icon w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="fab fa-facebook-f text-lg"></i>
+            </a>
+            <a href="#" class="social-icon w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="fab fa-instagram text-lg"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 flex justify-center">
+          <div class="relative">
+            <!-- Profile Image -->
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary floating">
+              <!-- Decorative Elements -->
+              <svg class="absolute top-0 left-0 w-full h-full rotate-slow opacity-50" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.5" class="opacity-30"></circle>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.5" class="opacity-30"></circle>
+                <path d="M50,2 A48,48 0 0,1 98,50" fill="none" stroke="currentColor" stroke-width="1" class="opacity-60"></path>
+                <path d="M50,10 A40,40 0 0,1 90,50" fill="none" stroke="currentColor" stroke-width="1" class="opacity-60"></path>
+              </svg>
+              
+              <!-- Placeholder Profile Image -->
+              <svg class="w-full h-full gradient-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" fill="url(#grad)"></rect>
+                <circle cx="50" cy="35" r="20" fill="#f0f0f0"></circle>
+                <path d="M50,60 Q50,90 90,95 L90,100 L10,100 L10,95 Q50,90 50,60" fill="#f0f0f0"></path>
+                <text x="50" y="50" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="bold">YS</text>
+              </svg>
+            </div>
+            
+            <!-- Decorative Circles -->
+            <div class="absolute -bottom-4 -right-4 w-20 h-20 rounded-full blur-lg bg-primary opacity-30 pulse"></div>
+            <div class="absolute -top-4 -left-4 w-16 h-16 rounded-full blur-lg bg-primary opacity-30 pulse" style="animation-delay: 1s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold section-title fade-in">About Me</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="card rounded-xl p-6 fade-in">
+          <div class="flex items-center mb-6">
+            <div class="icon-circle mr-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Who I Am</h3>
+          </div>
+          
+          <p class="opacity-80 mb-4">
+            I'm Yumna Shams, a passionate Graphic Designer and Web Developer based in Peshawar. I combine creative design thinking with technical development skills to create engaging digital experiences.
+          </p>
+          
+          <p class="opacity-80">
+            My goal is to find challenging positions where I can enhance my knowledge and skills, bringing positive differences and contributing to organizational growth.
+          </p>
+        </div>
+        
+        <div class="card rounded-xl p-6 fade-in delay-100">
+          <div class="flex items-center mb-6">
+            <div class="icon-circle mr-4">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-semibold">My Expertise</h3>
+          </div>
+          
+          <div class="space-y-5">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>Graphic Design</span>
+                <span class="gradient-text">84%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 84%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>Web Development</span>
+                <span class="gradient-text">85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>MS Office</span>
+                <span class="gradient-text">100%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span>C++</span>
+                <span class="gradient-text">75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card rounded-xl p-6 fade-in delay-200">
+          <div class="flex items-center mb-6">
+            <div class="icon-circle mr-4">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Contact Info</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt w-6 gradient-text"></i>
+              <span class="opacity-80">Ittehad Colony, Peshawar</span>
+            </div>
+            
+            <div class="flex items-center">
+              <i class="far fa-envelope w-6 gradient-text"></i>
+              <span class="opacity-80">yumnashamsbscs2312@gmail.com</span>
+            </div>
+            
+            <div class="flex items-center">
+              <i class="fas fa-phone w-6 gradient-text"></i>
+              <span class="opacity-80">03231900959</span>
+            </div>
+            
+            <div class="flex items-center">
+              <i class="fas fa-language w-6 gradient-text"></i>
+              <span class="opacity-80">Urdu, Pashto, English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold section-title fade-in">My Skills</h2>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mt-12">
+        <!-- Skill 1: Graphic Design -->
+        <div class="hexagon-container fade-in">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-1">
+              <i class="fas fa-paint-brush hexagon-icon"></i>
+              <span class="hexagon-text">Graphic Design</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 2: Web Development -->
+        <div class="hexagon-container fade-in delay-100">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-2">
+              <i class="fas fa-code hexagon-icon"></i>
+              <span class="hexagon-text">Web Development</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 3: MS Office -->
+        <div class="hexagon-container fade-in delay-200">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-3">
+              <i class="fas fa-file-alt hexagon-icon"></i>
+              <span class="hexagon-text">MS Office</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 4: MS Access -->
+        <div class="hexagon-container fade-in delay-300">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-4">
+              <i class="fas fa-database hexagon-icon"></i>
+              <span class="hexagon-text">MS Access</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 5: C++ -->
+        <div class="hexagon-container fade-in delay-400">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-5">
+              <i class="fas fa-laptop-code hexagon-icon"></i>
+              <span class="hexagon-text">C++</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 6: Networking -->
+        <div class="hexagon-container fade-in delay-500">
+          <div class="hexagon-wrapper">
+            <div class="hexagon color-6">
+              <i class="fas fa-network-wired hexagon-icon"></i>
+              <span class="hexagon-text">Networking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card rounded-xl p-8 mt-12 fade-in">
+        <h3 class="text-xl font-semibold mb-6 text-center">Technical Skills</h3>
+        
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="skill-pill px-4 py-2 rounded-full">HTML5</span>
+          <span class="skill-pill px-4 py-2 rounded-full">CSS3</span>
+          <span class="skill-pill px-4 py-2 rounded-full">JavaScript</span>
+          <span class="skill-pill px-4 py-2 rounded-full">Photoshop</span>
+          <span class="skill-pill px-4 py-2 rounded-full">Illustrator</span>
+          <span class="skill-pill px-4 py-2 rounded-full">MS Word</span>
+          <span class="skill-pill px-4 py-2 rounded-full">MS Excel</span>
+          <span class="skill-pill px-4 py-2 rounded-full">MS PowerPoint</span>
+          <span class="skill-pill px-4 py-2 rounded-full">MS Access</span>
+          <span class="skill-pill px-4 py-2 rounded-full">C++</span>
+          <span class="skill-pill px-4 py-2 rounded-full">Social Media Marketing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold section-title fade-in">Education & Certifications</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+        <div class="card rounded-xl p-8 fade-in">
+          <div class="flex items-center mb-8">
+            <div class="icon-circle mr-4">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="text-2xl font-semibold gradient-text">Education</h3>
+          </div>
+          
+          <div class="space-y-10">
+            <div class="timeline-item">
+              <h4 class="text-xl font-medium">Bachelor of Science in Computer Science</h4>
+              <p class="gradient-text mt-1">SBBWU Peshawar</p>
+              <p class="opacity-70 mt-1">2024 - Continue</p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-medium">FSc - Pre-Medical</h4>
+              <p class="gradient-text mt-1">GGC Gulbahar</p>
+              <p class="opacity-70 mt-1">2022 - 2024</p>
+            </div>
+            
+            <div class="timeline-item">
+              <h4 class="text-xl font-medium">Matric - Science</h4>
+              <p class="gradient-text mt-1">GGGHS Khyber Colony</p>
+              <p class="opacity-70 mt-1">2021 - 2022</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in delay-200">
+          <div class="flex items-center mb-8">
+            <div class="icon-circle mr-4">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="text-2xl font-semibold gradient-text">Certifications</h3>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-100">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-code"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Web Development</h4>
+                <p class="opacity-70 text-sm">SMIT</p>
+              </div>
+            </div>
+            
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-200">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Graphic Designing</h4>
+                <p class="opacity-70 text-sm">SMIT</p>
+              </div>
+            </div>
+            
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-300">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">DIT (Diploma in IT)</h4>
+                <p class="opacity-70 text-sm"></p>
+              </div>
+            </div>
+            
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-400">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Police Recruitment Training</h4>
+                <p class="opacity-70 text-sm"></p>
+              </div>
+            </div>
+            
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-500">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-pen-fancy"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Hand Writing Competition</h4>
+                <p class="opacity-70 text-sm">GGC</p>
+              </div>
+            </div>
+            
+            <div class="card rounded-xl p-5 flex items-center scale-in delay-500">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div>
+                <h4 class="font-medium">Seminar on IT</h4>
+                <p class="opacity-70 text-sm">ICNA Peshawar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold section-title fade-in">My Projects</h2>
+      
+      <div class="card rounded-xl p-8 mt-12 fade-in">
+        <h3 class="text-2xl font-semibold mb-8 text-center gradient-text">
+          Database in MS Access (2023)
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="project-card card rounded-xl p-6 md:col-span-2 slide-in-left">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <h4 class="text-lg font-medium">Student Info Form</h4>
+            </div>
+            
+            <p class="opacity-80">
+              A comprehensive form to collect and manage student information efficiently. Includes fields for personal details, academic records, and contact information.
+            </p>
+            
+            <div class="project-overlay rounded-xl">
+              <h4 class="text-white text-xl mb-2">Student Info Form</h4>
+              <p class="text-white opacity-80 text-center mb-4 px-4">Database system for student management</p>
+              <a href="#" class="btn btn-primary px-6 py-2 rounded-full">View Details</a>
+            </div>
+          </div>
+          
+          <div class="project-card card rounded-xl p-6 slide-in-right">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h4 class="text-lg font-medium">Teachers Record</h4>
+            </div>
+            
+            <p class="opacity-80">
+              Database system to maintain and organize teacher information and records.
+            </p>
+            
+            <div class="project-overlay rounded-xl">
+              <h4 class="text-white text-xl mb-2">Teachers Record</h4>
+              <p class="text-white opacity-80 text-center mb-4 px-4">Teacher management system</p>
+              <a href="#" class="btn btn-primary px-6 py-2 rounded-full">View Details</a>
+            </div>
+          </div>
+          
+          <div class="project-card card rounded-xl p-6 slide-in-left delay-100">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-id-card"></i>
+              </div>
+              <h4 class="text-lg font-medium">Personal Info Form</h4>
+            </div>
+            
+            <p class="opacity-80">
+              Form designed to collect and store personal information securely.
+            </p>
+            
+            <div class="project-overlay rounded-xl">
+              <h4 class="text-white text-xl mb-2">Personal Info Form</h4>
+              <p class="text-white opacity-80 text-center mb-4 px-4">Personal data collection system</p>
+              <a href="#" class="btn btn-primary px-6 py-2 rounded-full">View Details</a>
+            </div>
+          </div>
+          
+          <div class="project-card card rounded-xl p-6 slide-in-right delay-100">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 class="text-lg font-medium">Result</h4>
+            </div>
+            
+            <p class="opacity-80">
+              System to generate and manage academic results and performance reports.
+            </p>
+            
+            <div class="project-overlay rounded-xl">
+              <h4 class="text-white text-xl mb-2">Result System</h4>
+              <p class="text-white opacity-80 text-center mb-4 px-4">Academic results management</p>
+              <a href="#" class="btn btn-primary px-6 py-2 rounded-full">View Details</a>
+            </div>
+          </div>
+          
+          <div class="project-card card rounded-xl p-6 md:col-span-2 slide-in-left delay-200">
+            <div class="flex items-center mb-4">
+              <div class="icon-circle mr-4 flex items-center justify-center">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h4 class="text-lg font-medium">Calculator</h4>
+            </div>
+            
+            <p class="opacity-80">
+              Functional calculator built within MS Access for quick calculations. Features basic arithmetic operations and memory functions.
+            </p>
+            
+            <div class="project-overlay rounded-xl">
+              <h4 class="text-white text-xl mb-2">Calculator</h4>
+              <p class="text-white opacity-80 text-center mb-4 px-4">MS Access calculator application</p>
+              <a href="#" class="btn btn-primary px-6 py-2 rounded-full">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold section-title fade-in">Get In Touch</h2>
+      
+      <div class="card rounded-xl overflow-hidden mt-12 fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="gradient-bg p-8 text-white">
+            <h3 class="text-2xl font-semibold mb-8">Contact Information</h3>
+            
+            <div class="space-y-8">
+              <div class="flex items-start">
+                <div class="contact-icon-circle bg-white/20 flex items-center justify-center mr-4">
+                  <i class="fas fa-map-marker-alt contact-icon"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Location</h4>
+                  <p class="opacity-80 mt-1">Ittehad Colony, Peshawar</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="contact-icon-circle bg-white/20 flex items-center justify-center mr-4">
+                  <i class="fas fa-phone contact-icon"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Phone</h4>
+                  <p class="opacity-80 mt-1">03231900959</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="contact-icon-circle bg-white/20 flex items-center justify-center mr-4">
+                  <i class="far fa-envelope contact-icon"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Email</h4>
+                  <p class="opacity-80 mt-1">yumnashamsbscs2312@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-12">
+              <h4 class="font-medium mb-4">Follow Me</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/30 transition">
+                  <i class="fab fa-linkedin-in text-white"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/30 transition">
+                  <i class="fab fa-github text-white"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/30 transition">
+                  <i class="fab fa-facebook-f text-white"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 hover:bg-white/30 transition">
+                  <i class="fab fa-instagram text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-6 gradient-text">Send Me a Message</h3>
+            
+            <form id="contactForm">
+              <div class="mb-4">
+                <label for="name" class="block text-sm font-medium mb-2 opacity-80">Your Name</label>
+                <input type="text" id="name" class="input-field w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter your name">
+              </div>
+              
+              <div class="mb-4">
+                <label for="email" class="block text-sm font-medium mb-2 opacity-80">Your Email</label>
+                <input type="email" id="email" class="input-field w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter your email">
+              </div>
+              
+              <div class="mb-4">
+                <label for="subject" class="block text-sm font-medium mb-2 opacity-80">Subject</label>
+                <input type="text" id="subject" class="input-field w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter subject">
+              </div>
+              
+              <div class="mb-6">
+                <label for="message" class="block text-sm font-medium mb-2 opacity-80">Message</label>
+                <textarea id="message" rows="4" class="input-field w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter your message"></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary w-full px-6 py-3 rounded-lg font-medium">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 mt-12 border-t">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="#" class="text-2xl font-bold gradient-text">YS</a>
+          <p class="opacity-70 mt-2">Graphic Designer | Web Developer</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+          <a href="#home" class="hover:gradient-text transition">Home</a>
+          <a href="#about" class="hover:gradient-text transition">About</a>
+          <a href="#skills" class="hover:gradient-text transition">Skills</a>
+          <a href="#education" class="hover:gradient-text transition">Education</a>
+          <a href="#projects" class="hover:gradient-text transition">Projects</a>
+          <a href="#contact" class="hover:gradient-text transition">Contact</a>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon w-10 h-10 rounded-full flex items-center justify-center">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t mt-8 pt-8 text-center">
+        <p class="opacity-70">&copy; 2023 Yumna Shams. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <div class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // DOM Elements
+    const htmlElement = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollTop = document.getElementById('scrollTop');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    const progressBars = document.querySelectorAll('.progress-fill');
+    
+    // Theme Toggle Function
+    function toggleTheme() {
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        htmlElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.classList.remove('light');
+        htmlElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      
+      // Update mobile menu background
+      if (htmlElement.classList.contains('dark')) {
+        mobileMenu.style.background = 'rgba(15, 23, 42, 0.95)';
+      } else {
+        mobileMenu.style.background = 'rgba(248, 250, 252, 0.95)';
+      }
+    }
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      htmlElement.className = savedTheme;
+    } else {
+      // Use device preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        htmlElement.classList.remove('dark');
+        htmlElement.classList.add('light');
+      }
+    }
+    
+    // Update mobile menu background initially
+    if (htmlElement.classList.contains('dark')) {
+      mobileMenu.style.background = 'rgba(15, 23, 42, 0.95)';
+    } else {
+      mobileMenu.style.background = 'rgba(248, 250, 252, 0.95)';
+    }
+    
+    // Event Listeners
+    themeToggle.addEventListener('click', toggleTheme);
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuToggle.innerHTML = mobileMenu.classList.contains('open') ? 
+        '<i class="fas fa-times text-2xl"></i>' : 
+        '<i class="fas fa-bars text-2xl"></i>';
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+      });
+    });
+    
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = document.documentElement.scrollTop;
+      const progress = (scrolled / scrollTotal) * 100;
+      scrollProgress.style.width = `${progress}%`;
+      
+      // Show/hide scroll to top button
+      if (scrolled > 300) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+      
+      // Update active nav link
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (scrolled >= sectionTop && scrolled < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Animate elements when they come into view
+      animatedElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 50) {
+          element.classList.add('visible');
+        }
+      });
+    });
+    
+    // Scroll to top when button is clicked
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Typing effect
+    const typedTextElement = document.getElementById('typedText');
+    const phrases = ['Graphic Designer', 'Web Developer', 'UI/UX Designer', 'BSCS Student'];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isDeleting) {
+        typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      let typeSpeed = isDeleting ? 50 : 100;
+      
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        isDeleting = true;
+        typeSpeed = 1500; // Pause at end
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 500; // Pause before typing next phrase
+      }
+      
+      setTimeout(typeEffect, typeSpeed);
+    }
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Simple validation
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      // In a real application, you would send this data to a server
+      alert('Thank you for your message! I will get back to you soon.');
+      contactForm.reset();
+    });
+    
+    // Initialize animations on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Start typing effect
+      setTimeout(typeEffect, 1000);
+      
+      // Trigger scroll event to initialize animations
+      window.dispatchEvent(new Event('scroll'));
+      
+      // Initialize progress bars
+      setTimeout(() => {
+        progressBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
+        });
+      }, 1000);
+    });
+    
+    // Initialize animations immediately without waiting for DOMContentLoaded
+    setTimeout(() => {
+      // Make hero section elements visible immediately
+      document.querySelectorAll('#home .fade-in').forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, index * 200);
+      });
+      
+      // Trigger scroll event to initialize other animations
+      window.dispatchEvent(new Event('scroll'));
+    }, 300);
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9502858e62814b55',t:'MTc0OTk5NTI3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
